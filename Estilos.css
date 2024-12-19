@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 10px;
 }
 
@@ -48,12 +48,25 @@ body {
     transition: width 0.5s ease-in-out;
 }
 
+/* Colores de la barra de progreso según el porcentaje */
+.progress-fill.low {
+    background-color: #58c6f5; /* Azul claro */
+}
+
+.progress-fill.medium {
+    background-color: #f5a623; /* Naranja */
+}
+
+.progress-fill.high {
+    background-color: #f54242; /* Rojo */
+}
+
 /* Puntos de referencia */
 .milestone {
     position: absolute;
     width: 8px;
     height: 8px;
-    background-color: black;
+    background-color: gray; /* Color de los puntos al alcanzar el milestone */
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
@@ -65,9 +78,12 @@ body {
 .milestone:nth-child(4) { left: 60%; }
 .milestone:nth-child(5) { left: 80%; }
 
-.progress-label {
-    text-align: right;
-    font-size: 12px;
-    color: #555;
+.milestone.reached {
+    background-color: black; /* Color de los puntos al alcanzar el milestone */
 }
 
+.progress-label {
+    text-align: right;
+    font-size: 14px;
+    color: #555;
+}
