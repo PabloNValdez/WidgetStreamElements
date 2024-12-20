@@ -17,19 +17,49 @@ body {
     flex-direction: column;
 }
 
+.custom-icon {
+    font-size: 50px; /* Ajusta el tamaño del icono aquí */
+    color: #f5a623; /* Cambia el color si es necesario */
+    vertical-align: middle; /* Alineación con el texto */
+}
+
 /* Título y progreso */
 .title {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre el icono y el texto */
 }
 
+/* Información de progreso */
 .progress-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 18px;
     margin-bottom: 10px;
+}
+
+/* Contenedor para "50/100" y "Partner Plus" */
+.progress-details {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: flex-end; /* Alinea los textos a la derecha */
+    margin-left: 10px; /* Espaciado respecto al título */
+}
+
+#progress-text {
+    margin: 0; /* Quita márgenes extra */
+}
+
+.progress-label {
+    margin: 0; /* Quita márgenes extra */
+    font-size: 14px; /* Tamaño menor para "Partner Plus" */
+    color: #555; /* Color gris */
+    text-align: right; /* Alineación derecha */
 }
 
 .progress-bar {
@@ -67,23 +97,21 @@ body {
     width: 8px;
     height: 8px;
     background-color: gray; /* Color de los puntos al alcanzar el milestone */
+    /*
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e5/Full_Star_Yellow.svg');
+    background-size: cover; */
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.milestone:nth-child(1) { left: 20%; }
-.milestone:nth-child(2) { left: 20%; }
-.milestone:nth-child(3) { left: 40%; }
-.milestone:nth-child(4) { left: 60%; }
-.milestone:nth-child(5) { left: 80%; }
+.milestone:nth-child(1) { left: 18%; }
+.milestone:nth-child(2) { left: 18%; }
+.milestone:nth-child(3) { left: 38%; }
+.milestone:nth-child(4) { left: 58%; }
+.milestone:nth-child(5) { left: 78%; }
 
 .milestone.reached {
     background-color: black; /* Color de los puntos al alcanzar el milestone */
 }
 
-.progress-label {
-    text-align: right;
-    font-size: 14px;
-    color: #555;
-}

@@ -2,6 +2,7 @@ let currentProgress = 0;
 const progressGoal = 100; // Meta total
 const progressText = document.getElementById('progress-text');
 const progressFill = document.getElementById('progress-fill');
+const customIcon = document.querySelector('.custom-icon');
 
 // Leer el valor inicial del span y actualizar la barra de progreso
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,10 +31,13 @@ function updateProgress() {
     progressFill.classList.remove('low', 'medium', 'high');
     if (progressPercentage < 50) {
         progressFill.classList.add('low');
+        customIcon.style.color = '#58c6f5'; // Azul claro
     } else if (progressPercentage < 75) {
         progressFill.classList.add('medium');
+        customIcon.style.color = '#f5a623'; // Naranja
     } else {
         progressFill.classList.add('high');
+        customIcon.style.color = '#f54242'; // Rojo
     }
 
     // Actualizar los puntos negros según el progreso
