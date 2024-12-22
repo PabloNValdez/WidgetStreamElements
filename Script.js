@@ -16,6 +16,9 @@ window.addEventListener('onEventReceived', function (obj) {
     const listener = obj.detail.listener.split("-")[0];
     const event = obj.detail.event;
 
+    // Ignorar suscripciones regaladas
+    if (event.gifted) return;
+
     if (listener === 'subscriber') {
         currentProgress += event.amount || 1; //++ subs
         updateProgress();
@@ -27,17 +30,26 @@ function updateProgress() {
     progressFill.style.width = progressPercentage + '%';
     progressText.innerHTML = `<b>${currentProgress}/${progressGoal}</b>`;
 
-    // Cambiar el color de la barra de progreso según el porcentaje
+    // Cambiar el color de la barra de progreso y el icono según el porcentaje
     progressFill.classList.remove('low', 'medium', 'high');
-    if (progressPercentage < 50) {
-        progressFill.classList.add('low');
-        customIcon.style.color = '#58c6f5'; // Azul claro
-    } else if (progressPercentage < 75) {
-        progressFill.classList.add('medium');
-        customIcon.style.color = '#f5a623'; // Naranja
+    if (progressPercentage < 20) {
+        progressFill.style.backgroundColor = '#dac2fe'; 
+        customIcon.style.color = '#dac2fe'; 
+    } else if (progressPercentage < 40) {
+        progressFill.style.backgroundColor = '#dac2fe'; 
+        customIcon.style.color = '#dac2fe'; 
+    } else if (progressPercentage < 60) {
+        progressFill.style.backgroundColor = '#dac2fe'; // Morado pastel
+        customIcon.style.color = '#dac2fe'; // Morado pastel
+    } else if (progressPercentage < 80) {
+        progressFill.style.backgroundColor = '#dac2fe'; 
+        customIcon.style.color = '#dac2fe'; 
+    } else if (progressPercentage < 100) {
+        progressFill.style.backgroundColor = '#dac2fe';
+        customIcon.style.color = '#dac2fe'; 
     } else {
-        progressFill.classList.add('high');
-        customIcon.style.color = '#f54242'; // Rojo
+        progressFill.style.backgroundColor = '#dac2fe'; 
+        customIcon.style.color = '#dac2fe'; 
     }
 
     // Actualizar los puntos negros según el progreso

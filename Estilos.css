@@ -78,18 +78,6 @@ body {
     transition: width 0.5s ease-in-out;
 }
 
-/* Colores de la barra de progreso según el porcentaje */
-.progress-fill.low {
-    background-color: #58c6f5; /* Azul claro */
-}
-
-.progress-fill.medium {
-    background-color: #f5a623; /* Naranja */
-}
-
-.progress-fill.high {
-    background-color: #f54242; /* Rojo */
-}
 
 /* Puntos de referencia */
 .milestone {
